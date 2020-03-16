@@ -14,13 +14,18 @@
 - props drilling -> pass props deep to nested components
 - filter() returns a new array
 - Svelte update:  () => removeSomething(id)  can be used like removeSomething(id)
-- setContext & getContext (video 27) 
+- setContext & getContext (video 27)
 			   -> easily pass data for parent component to child component
 			   -> better that props drilling, because we can omit the middle components passing
-			   -> similar with Context API of React  
+			   -> similar with Context API of React
 			   -> if we pass more data, we can set a state object with setContext
 - createEventDispatcher -> pass data from child components to parent components
 			-> not the prefered method, better use Store or setContext-getContext
 - Reactivity -> $:variable -> don't neet to add let
 - reduce()
 - Two Way binding ->  great in Svelte
+- dynamic class -> class:formControl={} in Svelte
+				-> ternary operator in React
+- Lifecycle functions : onMount, beforeUpdate, afterUpdate, onDestroy, tick
+- Local Storage API -> browser API !!!! -> after refresh the data is there
+- slot
