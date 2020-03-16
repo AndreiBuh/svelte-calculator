@@ -1,0 +1,26 @@
+1. Introduction
+
+- framework that compile the code before we ship it
+- small in size, fast, simple, less code
+- VSCode extensions: Svelte, Svelte Intellisense, Svelte 3 Snippets
+- Fontawesome inject in public folder
+- ES6 import and export
+- CSS scoped locally, not like in React
+- CSS variables -> var(--primaryColor) !!! Thing to improve to Shivani Center project !!!
+- :global(span) -> add css global
+- #each in Svelte, map() in React
+- for Accesibility for fontawesome use aria-label or aria-name -> screen readers
+- props, dispatch event, setContext & getContext, store, fail
+- props drilling -> pass props deep to nested components
+- filter() returns a new array
+- Svelte update:  () => removeSomething(id)  can be used like removeSomething(id)
+- setContext & getContext (video 27) 
+			   -> easily pass data for parent component to child component
+			   -> better that props drilling, because we can omit the middle components passing
+			   -> similar with Context API of React  
+			   -> if we pass more data, we can set a state object with setContext
+- createEventDispatcher -> pass data from child components to parent components
+			-> not the prefered method, better use Store or setContext-getContext
+- Reactivity -> $:variable -> don't neet to add let
+- reduce()
+- Two Way binding ->  great in Svelte
