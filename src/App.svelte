@@ -5,10 +5,11 @@
   import ExpensesList from "./ExpensesList.svelte";
   import Totals from "./Totals.svelte";
   import ExpenseForm from "./ExpenseForm.svelte";
+  import Modal from "./Modal.svelte";
   //variables
   let expenses = [];
   //toggle Forms
-  let isFormOpen = false;
+  let isModalOpen = false;
   //edit
   let updateId = null;
   let updateName = "";
@@ -20,12 +21,12 @@
   }, 0);
 
   //functions
-  const showForm = () => {
-    isFormOpen = true;
+  const showModal = () => {
+    isModalOpen = true;
   };
 
-  const hideForm = () => {
-    isFormOpen = false;
+  const hideModal = () => {
+    isModalOpen = false;
     updateName = "";
     updateAmount = null;
     setId = null;
@@ -53,7 +54,7 @@
     updateId = expense.id;
     updateName = expense.name;
     updateAmount = expense.amount;
-    showForm();
+    showModal();
   };
 
   const editExpense = ({ name, amount }) => {
@@ -82,22 +83,24 @@
       : [];
   });
 
-  afterUpdate(()=> {
+  afterUpdate(() => {
     setLocalStorage();
-  }))
+  });
 </script>
 
-<Navbar {showForm} />
+<Navbar {showModal} />
 
 <main class="content">
-  {#if isFormOpen}
-    <ExpenseForm
-      {addExpense}
-      name={updateName}
-      amount={updateAmount}
-      {isEditing}
-      {editExpense}
-      {hideForm} />
+  {#if isModalOpen}
+    <Modal>
+      <ExpenseForm
+        {addExpense}
+        name={updateName}
+        amount={updateAmount}
+        {isEditing}
+        {editExpense}
+        {hideModal} />
+    </Modal>
   {/if}
   <Totals title="Total Expenses" {total} />
   <ExpensesList {expenses} />

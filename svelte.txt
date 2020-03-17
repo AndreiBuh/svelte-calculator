@@ -1,4 +1,3 @@
-1. Introduction
 
 - framework that compile the code before we ship it
 - small in size, fast, simple, less code
@@ -28,4 +27,15 @@
 				-> ternary operator in React
 - Lifecycle functions : onMount, beforeUpdate, afterUpdate, onDestroy, tick
 - Local Storage API -> browser API !!!! -> after refresh the data is there
-- slot
+- slots -> modal
+- <slot></slot> -> svelte or props.children in React
+- named slots
+- transition & animation built in Svelte
+- transitions can be applied only on DOM elements, not on components
+- animate the static ones -> animate
+- an element that use the animate directive must be the immeditate child of a keyed each block
+!!!  The default behaviour oh each block: Svelte add or removes last item, and then updates the rest !!!!!
+!!!! Solution -> key: { #each expenses as expense, index (expense.id)}  !!!!
+
+1. HTTP requests using onMount()
+2. HTTP requests using #Await

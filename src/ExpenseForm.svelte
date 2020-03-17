@@ -5,7 +5,7 @@
   export let isEditing;
   export let addExpense;
   export let editExpense;
-  export let hideForm;
+  export let hideModal;
 
   $: isEmpty = !name || !amount;
 
@@ -20,6 +20,7 @@
     }
     name = "";
     amount = null;
+    hideModal();
   };
 </script>
 
@@ -44,7 +45,7 @@
       class:disabled={isEmpty}>
       {#if isEditing}Edit expense{:else}Add expense{/if}
     </button>
-    <button type="button" class="close-btn" on:click={hideForm}>
+    <button type="button" class="close-btn" on:click={hideModal}>
       <i class="fa fa-times" />
       Close
     </button>
