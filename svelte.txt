@@ -1,3 +1,4 @@
+1. Calculator app
 
 - framework that compile the code before we ship it
 - small in size, fast, simple, less code
@@ -37,5 +38,32 @@
 !!!  The default behaviour oh each block: Svelte add or removes last item, and then updates the rest !!!!!
 !!!! Solution -> key: { #each expenses as expense, index (expense.id)}  !!!!
 
-1. HTTP requests using onMount()
-2. HTTP requests using #Await
+1. HTTP requests using onMount()  -> fetch or axios  !!!!!
+EX:
+	let users = [];
+	loading=true;
+ -> onMount(async () => {
+	 let response = await fetch('url);
+	 let userData = await response.json();
+	 users = userdata;
+	 loading = false;
+ })
+2. HTTP requests using #Await !!!!!!
+{#await} {:then} {:catch} {/await}
+
+
+!!!!!!!!!!!!          Deploy -> Netlify         !!!!!
+
+- Create account on Netlify
+
+1. Drag & drop
+- npm run build 
+- drag & drop public/ folder
+
+2. Netlify Continous deployment process
+ -> Set up our project to the Github
+ -> Netlify watches for changes and each time changes are applied, Netlify rebuilds the site for us
+ -> So we just push the changes to Github and Netlify will do the rest
+
+ - New site from Git -> Github -> select repository    -> build command: npm run build  -> Deploy site
+													   -> publish directory: public
